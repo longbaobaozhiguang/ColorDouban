@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ColorDouban</string>
+
+    <string name="enter_douban">进入豆瓣</string>
+    <string name="douban_movie">豆瓣电影</string>
+    <string name="show_time">放映年份：%s</string>
+    <string name="ratings_count">(%d 人评价)</string>
+    <string name="show_country">%s 上映</string>
+    <string name="wish_count">想看人数</string>
+    <string name="collect_count">看过人数</string>
+    <string name="load_end">已经到底了</string>
+    <string name="load_err">加载失败，点击重新加载</string>
+    <string name="in_theaters">正在热映</string>
+    <string name="top250">Top250</string>
+    <string name="about">关于</string>
+    <string name="splitStr"> | </string>
+    <string name="net_err">加载失败</string>
+    <string name="aka">别名：%s</string>
+    <string name="unknow_error">未知错误</string>
+    <string name="name_en">英文名：%s</string>
+    <string name="gender">性别：%s</string>
+    <string name="born_place">出生地：%s</string>
+    <string name="work_at_movies">参演电影</string>
+    <string name="search">search</string>
+    <string name="default_location">北京市</string>
+    <string name="select_city">选择城市</string>
+    <string name="filter_city_tips">请输入城市中文或拼音</string>
+    <string name="change_city_tips">你当前正处于“%s”，是否切换城市？</string>
+    <string name="cancel">取消</string>
+    <string name="ensure">确定</string>
+    <string name="search_history">搜索历史</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

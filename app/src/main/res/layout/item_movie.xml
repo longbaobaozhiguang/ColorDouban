@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="subject"
+            type="com.longb.colordouban.bean.Subject"/>
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_touch_bg"
+        android:clickable="true"
+        android:paddingLeft="@dimen/item_horizontal_margin"
+        android:paddingRight="@dimen/item_horizontal_margin"
+        android:paddingTop="@dimen/item_vertical_margin">
+
+        <ImageView
+            android:id="@+id/thumb"
+            android:layout_width="@dimen/thumb_width_min"
+            android:layout_height="@dimen/thumb_height_min"
+            android:layout_marginBottom="@dimen/item_vertical_margin"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{subject.images.large}"
+            app:placeHolder="@{@drawable/loading_thumb}"
+            android:transitionName="@string/trans_thumb_image"
+            tools:src="@drawable/loading_thumb"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/thumb"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/item_horizontal_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/item_vertical_margin">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_3"
+                    android:textSize="17sp"
+                    android:text="@{subject.title}"
+                    tools:text="电影标题"/>
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp"
+                    android:text="@{Float.toString(subject.rating.average)}"
+                    tools:text="8.0"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/casts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingTop="@dimen/item_vertical_margin"
+                android:textColor="@color/grey_2"
+                android:textSize="15sp"
+                app:casts="@{subject}"
+                tools:text="演员演员演员演员演员演员演员演员演员演员演员演员"/>
+
+            <TextView
+                android:id="@+id/show_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/item_vertical_margin"
+                android:textColor="@color/grey_1"
+                android:textSize="13sp"
+                android:text="@{@string/show_time(subject.year)}"
+                tools:text="上映时间：2016"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#e0e0e0"/>
+
+
+    </RelativeLayout>
+</layout>

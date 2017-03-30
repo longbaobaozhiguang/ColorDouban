@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/history_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:text="@string/search_history"/>
+
+    <LinearLayout
+        android:id="@+id/history_panel_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/history1"
+            tools:text="广州市"
+            style="@style/style_city_history"/>
+
+        <TextView
+            android:id="@+id/history2"
+            tools:text="广州市"
+            style="@style/style_city_history"/>
+
+        <TextView
+            android:id="@+id/history3"
+            tools:text="广州市"
+            style="@style/style_city_history"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/history_panel_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/history4"
+            tools:text="广州市"
+            style="@style/style_city_history"/>
+
+        <TextView
+            android:id="@+id/history5"
+            tools:text="广州市"
+            style="@style/style_city_history"/>
+
+        <TextView
+            android:id="@+id/history6"
+            tools:text="广州市"
+            style="@style/style_city_history"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
