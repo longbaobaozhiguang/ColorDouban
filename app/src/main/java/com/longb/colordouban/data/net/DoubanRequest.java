@@ -1,8 +1,8 @@
 package com.longb.colordouban.data.net;
 
 import android.content.Context;
-import android.util.Log;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.longb.colordouban.BuildConfig;
 
 import okhttp3.OkHttpClient;
@@ -14,19 +14,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by longb on 2017/1/21.
  */
-
 public class DoubanRequest {
-
 
     private static OkHttpClient mHttpClient;
 
     public static void init(Context context) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (BuildConfig.DEBUG) {
-            Log.i("DoubanRequest","add interceptor");
-            builder.addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY));
+            builder.addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                    .addNetworkInterceptor(new StethoInterceptor());
         }
         mHttpClient = builder.build();
+
     }
 
     private static MovieApi mDoubanApi;

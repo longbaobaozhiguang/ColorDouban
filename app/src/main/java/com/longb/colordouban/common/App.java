@@ -3,6 +3,7 @@ package com.longb.colordouban.common;
 import android.app.Application;
 import android.util.Log;
 
+import com.facebook.stetho.Stetho;
 import com.longb.colordouban.BuildConfig;
 import com.longb.colordouban.data.net.DoubanRequest;
 import com.longb.colordouban.utils.L;
@@ -22,10 +23,14 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            return;
-        }
         LeakCanary.install(this);
+        if (BuildConfig.DEBUG) {
+            Stetho.initialize(
+                    Stetho.newInitializerBuilder(this)
+                            .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                            .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
+                            .build());
+        }
         instance = this;
         L.setLogAdapter(new L.AndroidLogAdapter(BuildConfig.DEBUG ? Log.VERBOSE : (Log.ASSERT + 1)));
         ExpTips.init(this);
