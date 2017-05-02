@@ -35,7 +35,7 @@ public class App extends Application {
         L.setLogAdapter(new L.AndroidLogAdapter(BuildConfig.DEBUG ? Log.VERBOSE : (Log.ASSERT + 1)));
         ExpTips.init(this);
         mSp = new Sp(this);
-        DoubanRequest.init(this);
+        DoubanRequest.init(this,BuildConfig.DEBUG);
     }
 
     public static App getInstance() {
